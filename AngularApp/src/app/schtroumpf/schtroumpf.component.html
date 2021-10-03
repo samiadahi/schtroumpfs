@@ -1,0 +1,94 @@
+
+<h1 id="title">Schtroumpfs</h1>
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form #schtroumpfForm="ngForm" (ngSubmit)="onSubmit(schtroumpfForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.login" placeholder="Enter login" required >
+                  <label id="lab">Login :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="password" name="password" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.password" placeholder=" Password">
+                  <label id="lab">Password :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="age" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.age" placeholder="Enter the Schtroumpf's age ">
+                  <label id="lab">Age :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="family" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.family" placeholder="Family">
+                  <label id="lab">Family :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="race" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.race" placeholder="race">
+                  <label id="lab">Race :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="food" #name="ngModel" [(ngModel)]="schtroumpfService.selectedSchtroumpf.food" placeholder="food">
+                  <label id="lab">Food :</label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(schtroumpfForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" [disabled]="!schtroumpfForm.valid">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+            <table class="responsive-table highlight">
+                <thead>
+                  <tr>
+                    <th>Login</th>
+                    <th>Password</th>
+                    <th>Age</th>
+                    <th>Family</th>
+                    <th>Race</th>
+                    <th>Food</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tr *ngFor="let emp of schtroumpfService.schtroumpfs">
+                  <td>{{emp.login}}</td>
+                  <td>{{emp.password}}</td>
+                  <td>{{emp.age}}</td>
+                  <td>{{emp.family}}</td>
+                  <td>{{emp.race}}</td>
+                  <td>{{emp.age}}</td>
+                  <td>
+                      <a class="action-btn" (click)="onEdit(emp)">
+                        <i class="material-icons">edit</i>
+                      </a>
+                      <a class="action-btn" (click)="onDelete(emp._id,schtroumpfForm)">
+                        <i class="material-icons">delete</i>
+                      </a>
+                    </td>
+                </tr>
+              </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+         

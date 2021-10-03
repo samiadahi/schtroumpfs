@@ -1,0 +1,61 @@
+
+#title {
+    text-align:center;
+    color: #77B5FE;
+    
+}
+
+
+form div.input-field input{
+    padding-left: 15px !important;
+    color: black;
+}
+
+input.ng-invalid.ng-dirty{
+    border-bottom-color : #e91e63 !important;
+    box-shadow: 0 1px 0 0 #e91e63 !important;
+}
+#lab{
+    color: white;
+
+}
+
+.input-field>label{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.btn-custom,.btn-custom:hover,.btn-custom:focus{
+    background-color: transparent;
+    font-size: 1.1rem;
+    margin : 0px 5px;
+    border:white  solid 1px ;
+    text-transform:none;
+}
+
+div.card{
+    background-color : #99CCFF;
+    border-radius: 10px;
+}
+
+.vl {
+    border-left: 2px solid blue;
+    height: 400px;
+}
+
+a.action-btn{
+    color: blue ;
+    margin: 0px 5px;
+
+}
+a.action-btn:hover{
+    cursor: pointer;
+}
+
+#toast-container {
+    top: auto !important;
+    right: auto !important;
+    bottom: 10%;
+    left:7%;
+
+  }
